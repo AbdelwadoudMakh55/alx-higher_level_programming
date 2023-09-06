@@ -44,7 +44,7 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	if (current == NULL)
 	{
-		current = new;
+		(*tmp).next = new;
 		(*new).next = NULL;
 	}
 	return (new);
