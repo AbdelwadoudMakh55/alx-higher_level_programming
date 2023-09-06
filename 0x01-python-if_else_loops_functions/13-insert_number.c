@@ -42,5 +42,10 @@ listint_t *insert_node(listint_t **head, int number)
 			break;
 		}
 	}
+	if (current == NULL)
+	{
+		current = new;
+		(*new).next = NULL;
+	}
 	return (new);
 }
