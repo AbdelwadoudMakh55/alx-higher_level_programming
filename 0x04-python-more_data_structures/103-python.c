@@ -33,22 +33,22 @@ void print_python_bytes(PyObject *p)
 	if (!PyBytes_Check(p))
 	{
 		printf("[.] bytes object info\n");
-		printf(" [ERROR] Invalid Bytes Object\n");
+		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
-	printf(" [.] bytes object info\n");
-	printf(" size: %ld\n", PyBytes_Size(p));
-	printf(" trying string: %s\n",PyBytes_AsString(p));
+	printf("[.] bytes object info\n");
+	printf("  size: %ld\n", PyBytes_Size(p));
+	printf("  trying string: %s\n",PyBytes_AsString(p));
 	if (PyBytes_Size(p) < 10)
 	{
-		printf(" first %ld bytes:", PyBytes_Size(p) + 1);
+		printf("  first %ld bytes:", PyBytes_Size(p) + 1);
 		for (i = 0; i < PyBytes_Size(p) + 1; i++)
 			printf(" %02x", PyBytes_AsString(p)[i]);
 		printf("\n");
 	}
 	else
 	{
-		printf(" first 10 bytes:");
+		printf("  first 10 bytes:");
 		for (i = 0; i < 10; i++)
 			printf(" %02x", PyBytes_AsString(p)[i]);
 		printf("\n");
