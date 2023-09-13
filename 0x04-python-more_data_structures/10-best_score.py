@@ -7,6 +7,6 @@ def best_score(a_dictionary):
         if a_dictionary[key] > maxi:
             maxi = a_dictionary[key]
             best = key
-    if isinstance(maxi, int) is False:
+    if isinstance(best, str) is False:
         return None
     return best
