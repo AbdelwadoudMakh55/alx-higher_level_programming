@@ -30,7 +30,7 @@ void print_python_bytes(PyObject *p)
 {
 	long int i;
 
-	if (!p)
+	if (!PyBytes_Check(p))
 	{
 		printf("[.] bytes object info\n");
 		printf(" [ERROR] Invalid Bytes Object\n");
