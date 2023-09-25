@@ -78,4 +78,4 @@ void print_python_float(PyObject *p)
 	}
 	printf("[.] float object info\n");
 	printf("  value: %lf\n", PyFloat_AsDouble(p));
-}
+
