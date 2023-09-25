@@ -1,4 +1,4 @@
-#include <Python.h>
+#include "Python.h"
 /**
  *  print_python_list_info - prints some basic info about Python lists.
  *  @p : Pointer to a PyObject.
@@ -21,11 +21,11 @@ void print_python_list(PyObject *p)
  * @p : Pointer to PyObject.
  * Return: Void.
  */
-/*void print_python_bytes(PyObject *p)
+void print_python_bytes(PyObject *p)
 {
 
 	printf("[.] bytes object info\n");
-	printf("size: %ld\n", );
-	printf("trying string: %s\n", );
-	printf("first %ld bytes: \n", );
-}*/
+	printf("size: %ld\n", PyBytes_Size(p));
+	/*printf("trying string: %s\n", );
+	printf("first %ld bytes: \n", );*/
+}
