@@ -10,7 +10,13 @@ void print_python_list(PyObject *p)
 {
 	long int i;
 	PyListObject *new;
-
+	
+        if (!PyList_Check(p))
+        {
+                printf("[.] Python list info\n");
+                printf("  [ERROR] Invalid List Object\n");
+                return;
+        }
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %ld\n", PyList_Size(p));
 	new = (PyListObject *)p;
@@ -71,5 +77,5 @@ void print_python_float(PyObject *p)
 		return;
 	}
 	printf("[.] float object info\n");
-	printf("  value: %f\n", );
+	printf("  value: %lf\n", PyFloat_AsDouble(p));
 }
