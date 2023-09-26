@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This is the 4-square module
+"""This is the 6-square module
 Classes:
     - 'Square': This the class of squares.
 """
@@ -15,7 +15,7 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        if not isinstance(position, tuple):
+        if not isinstance(position, tuple) or len(position) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         if not isinstance(position[0], int) or \
            not isinstance(position[1], int):
@@ -45,7 +45,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple):
+        if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         if not isinstance(value[0], int) or not isinstance(value[1], int):
             raise TypeError("position must be a tuple of 2 positive integers")
