@@ -25,7 +25,7 @@ class Square:
         self.__position = position
 
     def area(self):
-        return self.__size ** 2
+        return self.size() ** 2
 
     @property
     def size(self):
