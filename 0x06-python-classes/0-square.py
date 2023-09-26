@@ -3,6 +3,8 @@
 Classes:
     - 'Square' : A class for squares.
 """
+
+
 class Square:
     """
     This is an enmpty class.
