@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 class Square:
     """
-    Args:
-    Returns:
+    This is an enmpty class.
     """
     pass
