@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import dis
 """
 This the module 103-magic_class
 - Classes:
@@ -22,5 +21,3 @@ class MagicClass:
 
     def circumference(self):
         return 2 * math.pi * self._MagicClass__radius
-
-dis.dis(MagicClass)
