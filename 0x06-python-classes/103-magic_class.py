@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-import math
-
-
 """This the module 103-magic_class
 - Classes:
     - 'MagicClass' : This is a class that do magic stuff."""
+import math
 
 
 class MagicClass:
