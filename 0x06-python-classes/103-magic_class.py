@@ -7,9 +7,6 @@ This the module 103-magic_class
 
 
 class MagicClass:
-    """ This the MagicClass Class
-    """
-
     def __init__(self, MagicClass__radius):
         self._MagicClass__radius = 0
         if type(radius) is not int and type(radius) is not float:
