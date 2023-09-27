@@ -1,5 +1,15 @@
 #!/usr/bin/python3
+"""
+This the module 103-magic_class
+- Classes:
+    - 'MagicClass' : This is a class that do magic stuff.
+"""
+
+
 class MagicClass:
+    """ This the MagicClass Class
+    """
+
     def __init__(self, MagicClass__radius):
         self._MagicClass__radius = 0
         if type(radius) != int and type(radius) != float:
