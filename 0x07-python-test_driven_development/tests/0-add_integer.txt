@@ -1,0 +1,63 @@
+``0-add_integer`` module
+===============================
+using ``add_integer``
+===============================
+
+``add_integer()`` returns the addition of its integers arguments.
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
+
+::
+
+    >>> add_integer(2.4, 3)
+    5
+
+::
+
+    >>> add_integer(5, 2.89)
+    7
+
+::
+
+    >>> add_integer(4.9, 10.23)
+    14
+
+::
+
+    >>> add_integer(4.9)
+    102
+
+Non-Numbers
+===========
+
+::
+
+    >>> add_integer([1, 7, 3], 3)
+    Traceback (most recent call last):
+	...
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer('6', 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer(2, '6')
+    Traceback (most recent call last):
+	...
+    TypeError: b must be an integer
+
+::
+
+    >>> add_integer(2, "489")
+    Traceback (most recent call last):
+	...
+    TypeError: b must be an integer
