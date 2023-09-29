@@ -25,6 +25,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, 5.23)
         self.assertRaises(TypeError, max_integer, (5, 3))
         self.assertRaises(TypeError, max_integer, {2, 10})
+        self.assertRaises(TypeError, max_integer, True)
 
     def test_value(self):
         """ Test the value """
