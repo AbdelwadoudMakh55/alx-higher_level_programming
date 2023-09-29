@@ -1,0 +1,42 @@
+``5-text_indentation`` module
+===============================
+using ``text_indentation``
+===============================
+
+``text_indentation()``  prints a text with 2 new lines after each of these
+ characters: ., ? and :
+
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Hello, World!")
+    Hello, World!
+
+::
+
+    >>> text_indentation("Dima Maroc. Morocco is: a big Country ? What do You do for a living ?")
+    Dima Maroc.
+    <BLANKLINE>
+    Morocco is:
+    <BLANKLINE>
+    a big Country ?
+    <BLANKLINE>
+    What do You do for a living ?
+    <BLANKLINE>
+        
+Edge Cases
+===========
+
+::
+
+    >>> text_indentation(5)
+    Traceback (most recent call last):
+	...
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation([1])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
