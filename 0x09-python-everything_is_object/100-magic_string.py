@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 def magic_function():
-    return "BestSchool"
+    magic = lambda i: 
+    return magic
