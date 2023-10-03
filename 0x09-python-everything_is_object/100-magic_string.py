@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-def magic_string():
-    print("BestSchool")
+magic_string = lambda i: for _ in range(i + 1) : print("BestSchool")
