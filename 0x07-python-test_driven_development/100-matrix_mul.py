@@ -17,7 +17,7 @@ def matrix_mul(m_a, m_b):
             raise TypeError("m_a must be a list of lists")
     for item in m_b:
         if type(item) is not list:
-            raise TypeError("m_a must be a list of lists")
+            raise TypeError("m_b must be a list of lists")
     # Third condition
     if len(m_a) == 0:
         raise ValueError("m_a can't be empty")
@@ -27,7 +27,7 @@ def matrix_mul(m_a, m_b):
     if len(m_b) == 0:
         raise ValueError("m_b can't be empty")
     for item in m_b:
-        if len(m_b) == 0:
+        if len(item) == 0:
             raise ValueError("m_b can't be empty")
     # Fourth condition
     len_m_a = 0
