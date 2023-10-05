@@ -24,7 +24,7 @@ integers/floats")
             if type(element) not in [int, float]:
                 raise TypeError("matrix must be a matrix (list of lists) of \
 integers/floats")
-    if len_track // len(matrix[0]) != len(matrix):
+    if len_track / len(matrix[0]) != len(matrix):
         raise TypeError("Each row of the matrix must have the same size")
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
