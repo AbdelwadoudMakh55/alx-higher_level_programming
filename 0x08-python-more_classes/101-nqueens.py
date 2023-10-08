@@ -14,6 +14,7 @@ def check_int(string):
             break
     return result
 
+
 def bound_fun(mat):
     for i in range(len(mat)):
         sum_row = 0
@@ -21,7 +22,7 @@ def bound_fun(mat):
             sum_row += mat[i][j]
         if sum_row > 1:
             return 0
-    
+
     for i in range(len(mat)):
         sum_col = 0
         for j in range(len(mat)):
@@ -39,18 +40,20 @@ def bound_fun(mat):
                 return 0
     return 1
 
-def nqueen(start):
-    if len(sys.argv) == 1 or len(sys.argv) > 2:
-        print("Usage: nqueens N")
-        sys.exit(1)
-    if not check_int(sys.argv[1]):
-        print("N must be a number")
-        sys.exit(1)
-    if int(sys.argv[1]) < 4:
-        print("N must be at least 4");
-        sys.exit(1)
-    n = int(sys.argv[1])
 
+if len(sys.argv) == 1 or len(sys.argv) > 2:
+    print("Usage: nqueens N")
+    sys.exit(1)
+if not check_int(sys.argv[1]):
+    print("N must be a number")
+    sys.exit(1)
+if int(sys.argv[1]) < 4:
+    print("N must be at least 4")
+    sys.exit(1)
+n = int(sys.argv[1])
+
+
+def nqueens(n, start):
     s_matr = []
     for i in range(n):
         row1 = []
@@ -70,10 +73,9 @@ def nqueen(start):
             row.append(0)
         board.append(row)
 
-
     i = 0
     j = start
-    while place < n :
+    while place < n:
         while j == n:
             if q_track[str(i + 1)] == 0:
                 place -= 1
@@ -106,9 +108,10 @@ def nqueen(start):
                 s_matr[i][1] = j
     print(s_matr)
 
+
 i = 0
 if int(sys.argv[1]) == 4 or int(sys.argv[1]) == 6:
     i = 1
 while i < int(sys.argv[1]) - 1:
-    nqueen(i)
+    nqueen(n, i)
     i += 1
