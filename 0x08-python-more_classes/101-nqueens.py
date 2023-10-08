@@ -113,5 +113,5 @@ i = 0
 if int(sys.argv[1]) == 4 or int(sys.argv[1]) == 6:
     i = 1
 while i < int(sys.argv[1]) - 1:
-    nqueen(n, i)
+    nqueens(n, i)
     i += 1
