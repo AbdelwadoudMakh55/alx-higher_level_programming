@@ -16,7 +16,6 @@ using ``BaseGeometry``
 ===========================
 
 ::
-    >>> bg = BaseGeometry()
     >>> bg.integer_validator("speed", 0)
     Traceback (most recent call last):
     	...
@@ -24,7 +23,13 @@ using ``BaseGeometry``
 
 ::
 
-    >>> bg = BaseGeometry()
+   >>> bg.integer_validator("Var", -15)
+   Traceback (most recent call last):
+	...
+   ValueError: Var must be greater than 0
+
+::
+
     >>> print(bg.area())
     Traceback (most recent call last):
         ...
@@ -32,8 +37,31 @@ using ``BaseGeometry``
 
 ::
 
-    >>> bg = BaseGeometry()
     >>> bg.integer_validator("Rien", "kl")
     Traceback (most recent call last):
         ...
     TypeError: Rien must be an integer
+
+::
+
+   >>> bg.integer_validator("Var", True)
+
+::
+   >>> bg.integer_validator("Ar", [])
+   Traceback (most recent call last):
+        ...
+   TypeError: Ar must be an integer
+
+::
+
+   >>> bg.integer_validator("Ra", {'ab': 10})
+   Traceback (most recent call last):
+        ...
+   TypeError: Ra must be an integer
+
+::
+
+   >>> bg.integer_validator("bar", 12.3)
+   Traceback (most recent call last):
+        ...
+   TypeError: bar must be an integer
