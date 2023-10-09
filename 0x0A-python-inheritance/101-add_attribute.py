@@ -3,6 +3,7 @@
 
 
 def add_attribute(obj, att_name, value):
+    """ This is the add_attribute function """
     result = 0
     for attr in dir(obj):
         if attr[0] != '_':
