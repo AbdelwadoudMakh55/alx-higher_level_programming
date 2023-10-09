@@ -14,6 +14,7 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
+
 class Rectangle(BaseGeometry):
     """ This is the rectangle module """
 
