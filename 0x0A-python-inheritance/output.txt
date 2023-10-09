@@ -1,0 +1,175 @@
+Trying:
+    MyList = __import__('1-my_list').MyList
+Expecting nothing
+ok
+Trying:
+    my_list = MyList()
+Expecting nothing
+ok
+Trying:
+    my_list.append(0)
+Expecting nothing
+ok
+Trying:
+    my_list.append(14)
+Expecting nothing
+ok
+Trying:
+    my_list.append(-9)
+Expecting nothing
+ok
+Trying:
+    my_list.append(3)
+Expecting nothing
+ok
+Trying:
+    my_list.print_sorted()
+Expecting:
+    [-9, 0, 3, 14]
+ok
+Trying:
+    my_list1 = MyList()
+Expecting nothing
+ok
+Trying:
+    my_list1.append(0)
+Expecting nothing
+ok
+Trying:
+    my_list1.append(0)
+Expecting nothing
+ok
+Trying:
+    my_list1.append(0)
+Expecting nothing
+ok
+Trying:
+    my_list1.append(0)
+Expecting nothing
+ok
+Trying:
+    my_list1.print_sorted()
+Expecting:
+    [0, 0, 0, 0]
+ok
+Trying:
+    print(my_list1)
+Expecting:
+    [0, 0, 0, 0]
+ok
+Trying:
+    my_list2 = MyList()
+Expecting nothing
+ok
+Trying:
+    my_list2.append(0)
+Expecting nothing
+ok
+Trying:
+    my_list2.append(1)
+Expecting nothing
+ok
+Trying:
+    my_list2.append(2)
+Expecting nothing
+ok
+Trying:
+    my_list2.append(3)
+Expecting nothing
+ok
+Trying:
+    my_list2.append(4)
+Expecting nothing
+ok
+Trying:
+    my_list2.print_sorted()
+Expecting:
+    [0, 1, 2, 3, 4]
+ok
+Trying:
+    print(my_list2)
+Expecting:
+    [0, 1, 2, 3, 4]
+ok
+Trying:
+    my_list3 = MyList()
+Expecting nothing
+ok
+Trying:
+    my_list3.print_sorted()
+Expecting:
+    []
+ok
+Trying:
+    print(my_list3)
+Expecting:
+    []
+ok
+Trying:
+    my_list4 = MyList()
+Expecting nothing
+ok
+Trying:
+    my_list4.append(10)
+Expecting nothing
+ok
+Trying:
+    my_list4.print_sorted()
+Expecting:
+    [10]
+ok
+Trying:
+    print(my_list4)
+Expecting:
+    [10]
+ok
+Trying:
+    my_list5 = MyList()
+Expecting nothing
+ok
+Trying:
+    my_list5.append(10)
+Expecting nothing
+ok
+Trying:
+    my_list5.append(9)
+Expecting nothing
+ok
+Trying:
+    my_list5.append(8)
+Expecting nothing
+ok
+Trying:
+    my_list5.append(5)
+Expecting nothing
+ok
+Trying:
+    my_list5.print_sorted()
+Expecting nothing
+**********************************************************************
+File "./tests/1-my_list.txt", line 66, in 1-my_list.txt
+Failed example:
+    my_list5.print_sorted()
+Expected nothing
+Got:
+    [5, 8, 9, 10]
+Trying:
+    print(my_list5)
+Expecting:
+    [5, 8, 9, 10]
+    [10, 9, 8, 5]
+**********************************************************************
+File "./tests/1-my_list.txt", line 67, in 1-my_list.txt
+Failed example:
+    print(my_list5)
+Expected:
+    [5, 8, 9, 10]
+    [10, 9, 8, 5]
+Got:
+    [10, 9, 8, 5]
+**********************************************************************
+1 items had failures:
+   2 of  36 in 1-my_list.txt
+36 tests in 1 items.
+34 passed and 2 failed.
+***Test Failed*** 2 failures.
