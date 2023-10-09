@@ -5,4 +5,4 @@
 
 def lookup(obj):
     """ This is the lookup function """
-    return list(obj.__dict__)
+    return list(dic(obj))
