@@ -5,4 +5,4 @@
 
 def lookup(obj):
     """ This is the lookup function """
-    return list(dic(obj))
+    return list(dir(obj))
