@@ -1,0 +1,39 @@
+``7-base_geometry`` module
+===============================
+using ``BaseGeometry``
+===============================
+
+``7-base_geometry.txt`` 
+
+::
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("speed", 55)
+
+===========================
+``Edge cases``
+===========================
+
+::
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("speed", 0)
+    Traceback (most recent call last):
+    	...
+    ValueError: speed must be greater than 0
+
+::
+
+    >>> bg = BaseGeometry()
+    >>> print(bg.area())
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+
+::
+
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("Rien", "kl")
+    Traceback (most recent call last):
+        ...
+    TypeError: Rien must be an integer
