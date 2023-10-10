@@ -3,7 +3,7 @@
 
 
 class Student:
-    """ This is the Student class 
+    """ This is the Student class
     """
 
     def __init__(self, first_name, last_name, age):
