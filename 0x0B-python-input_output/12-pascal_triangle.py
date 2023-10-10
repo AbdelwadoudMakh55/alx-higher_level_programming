@@ -6,8 +6,8 @@ def pascal_triangle(n):
     """ This the pascal_triangle function """
     if n <= 0:
         return []
-    pascal = [[1], [1, 1]]
-    for i in range(2, n):
+    pascal = [[1]]
+    for i in range(1, n):
         row = []
         row.append(1)
         for j in range(0, i - 1):
