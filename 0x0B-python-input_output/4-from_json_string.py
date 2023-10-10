@@ -6,4 +6,5 @@ import json
 
 
 def from_json_string(my_obj):
+    """ This is the from_json_string function """
     return json.loads(my_obj)
