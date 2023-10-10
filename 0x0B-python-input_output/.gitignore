@@ -1,0 +1,4 @@
+# Ignore *main.py and __pycache__
+
+__pycache__
+*main.py
