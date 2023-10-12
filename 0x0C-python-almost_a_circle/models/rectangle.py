@@ -97,19 +97,11 @@ class Rectangle(Base):
 {self.__width}/{self.__height}"
         return f"{rect_str}"
 
-    def update(self, *args):
-        i = 0
-        if i < len(args):
-            self.id = args[i]
-            i += 1
-        if i < len(args):
-            self.__width = args[i]
-            i += 1
-        if i < len(args):
-            self.__height = args[i]
-            i += 1
-        if i < len(args):
-            self.__x = args[i]
-            i += 1
-        if i < len(args):
-            self.__y = args[i]
+    def update(self, *args, **kwargs):
+        attr = ["id", "width", "height", "x", "y"]
+        if args is not None and len(args) > 0:
+            for i in range(len(args)):
+                setattr(self, attr[i], args[i])
+        else:
+            for key in list(kwargs.keys()):
+                setattr(self, key, kwargs[key])
