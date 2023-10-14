@@ -5,6 +5,9 @@
 import json
 
 
+class Dummy:
+    def update(self, a):
+        pass
 class Base:
     """ This is the base class """
 
@@ -46,3 +49,10 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ This is the create function """
+        rec = cls.__new__(cls)
+        rec.update(**dictionary)
+        return rec
