@@ -3,11 +3,9 @@
 
 
 import json
+from pathlib import Path
 
 
-class Dummy:
-    def update(self, a):
-        pass
 class Base:
     """ This is the base class """
 
@@ -56,3 +54,18 @@ class Base:
         rec = cls.__new__(cls)
         rec.update(**dictionary)
         return rec
+
+    @classmethod
+    def load_from_file(cls):
+        l_instance = []
+        filename = "./" + cls.__name__ + ".json"
+        path = Path(filename)
+        if not path.is_file():
+            return l_instance
+        else:
+            with open(filename, "r", encoding='utf-8') as f:
+                inst_list = cls.from_json_string(f.read())
+                for inst in inst_list:
+                    obj = cls.create(**inst)
+                    l_instance.append(obj)
+        return l_instance
