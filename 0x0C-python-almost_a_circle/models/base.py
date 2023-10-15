@@ -114,12 +114,19 @@ class Base:
     def draw(list_rectangles, list_squares):
         """ This is the draw function """
         wnd = turtle.Screen()
-        abd = turtle.Turtle()
         for rec in list_rectangles:
-            turtle.setpos(rec.__x, rec__y)
+            abd = turtle.Turtle()
+            turtle.setpos(rec.x, rec.y)
             for i in range(2):
-                abd.forward(rec.__width)
+                abd.forward(rec.width)
                 abd.right(90)
-                abd.forward(rec.__height)
+                abd.forward(rec.height)
                 abd.right(90)
-            abd.done()
+        for squ in list_squares:
+            abd = turtle.Turtle()
+            turtle.setpos(squ.x, squ.y)
+            for i in range(2):
+                abd.forward(squ.width)
+                abd.right(90)
+                abd.forward(squ.height)
+                abd.right(90)
