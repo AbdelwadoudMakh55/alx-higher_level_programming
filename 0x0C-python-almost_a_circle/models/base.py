@@ -4,6 +4,7 @@
 
 import json
 from pathlib import Path
+import csv
 
 
 class Base:
@@ -67,5 +68,43 @@ class Base:
                 inst_list = cls.from_json_string(f.read())
                 for inst in inst_list:
                     obj = cls.create(**inst)
+                    l_instance.append(obj)
+        return l_instance
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ This is the save_to_file_csv function """
+        if list_objs is not None and len(list_objs) != 0:
+            file_name = list_objs[0].__class__.__name__ + ".csv"
+        else:
+            file_name = "Base.csv"
+        l_dict = []
+        with open(file_name, "w", encoding='utf-8') as f:
+            write = csv.writer(f)
+            write.writerow(list(vars(list_objs[0]).keys()))
+            for obj in list_objs:
+                write.writerow(list(vars(obj).values()))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ This is the load from file function """
+        l_instance = []
+        filename = "./" + cls.__name__ + ".csv"
+        path = Path(filename)
+        if not path.is_file():
+            return l_instance
+        else:
+            with open(filename, encoding='utf-8', newline='') as f:
+                reader = csv.reader(f)
+                header = next(reader)
+                rows = []
+                for row in reader:
+                    rows.append(row)
+                for row in rows:
+                    dict_rep = {}
+                    obj = None
+                    for i in range(len(header)):
+                        dict_rep[header[i]] = row[i]
+                    obj = cls.create(**dict_rep)
                     l_instance.append(obj)
         return l_instance
