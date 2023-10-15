@@ -5,6 +5,7 @@
 import json
 from pathlib import Path
 import csv
+import turtle
 
 
 class Base:
@@ -108,3 +109,17 @@ class Base:
                     obj = cls.create(**dict_rep)
                     l_instance.append(obj)
         return l_instance
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ This is the draw function """
+        wnd = turtle.Screen()
+        abd = turtle.Turtle()
+        for rec in list_rectangles:
+            turtle.setpos(rec.__x, rec__y)
+            for i in range(2):
+                abd.forward(rec.__width)
+                abd.right(90)
+                abd.forward(rec.__height)
+                abd.right(90)
+            abd.done()
