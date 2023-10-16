@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """ This is the base module """
 import json
 from pathlib import Path
