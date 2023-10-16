@@ -38,4 +38,10 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """ This is the to_dictionary function """
-        return vars(self)
+        new_vars = {}
+        for key in list(vars(self).keys()):
+            if key == 'height' or key == 'width':
+                new_vars['size'] = vars(self)[key]
+            else:
+                new_vars[key] = vars(self)[key]
+        return new_vars
