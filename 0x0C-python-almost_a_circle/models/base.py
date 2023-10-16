@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """ This is the base module """
 
 
@@ -24,6 +25,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """ This """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return []
         else:
@@ -31,6 +33,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ this """
         if list_objs is not None and len(list_objs) != 0:
             file_name = list_objs[0].__class__.__name__ + ".json"
         else:
@@ -43,6 +46,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """ this """
         if json_string is None or len(json_string) == 0:
             return []
         else:
@@ -50,12 +54,14 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """ this """
         rec = cls.__new__(cls)
         rec.update(**dictionary)
         return rec
 
     @classmethod
     def load_from_file(cls):
+        """ this """
         l_instance = []
         filename = "./" + cls.__name__ + ".json"
         path = Path(filename)
@@ -71,6 +77,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """ this """
         if list_objs is not None and len(list_objs) != 0:
             file_name = list_objs[0].__class__.__name__ + ".csv"
         else:
@@ -84,6 +91,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """ this """
         l_instance = []
         filename = "./" + cls.__name__ + ".csv"
         path = Path(filename)
@@ -107,6 +115,7 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
+        """ this """
         wnd = turtle.Screen()
         for rec in list_rectangles:
             abd = turtle.Turtle()
