@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
 """ This is the base module """
-
-
 import json
 from pathlib import Path
 import csv
@@ -11,7 +9,8 @@ import turtle
 
 class Base:
     """ This is the base class
-    It is the base of all the other classes : Rectangle and Square
+        It is the base of all the other classes : Rectangle and Square
+
     """
 
     __nb_objects = 0
