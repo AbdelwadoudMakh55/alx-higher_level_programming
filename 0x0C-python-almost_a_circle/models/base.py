@@ -24,7 +24,6 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ This is the to_json_string function """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return []
         else:
@@ -32,7 +31,6 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ This is the save_to_file function """
         if list_objs is not None and len(list_objs) != 0:
             file_name = list_objs[0].__class__.__name__ + ".json"
         else:
@@ -45,7 +43,6 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ This is the from_json_string function """
         if json_string is None or len(json_string) == 0:
             return []
         else:
@@ -53,14 +50,12 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """ This is the create function """
         rec = cls.__new__(cls)
         rec.update(**dictionary)
         return rec
 
     @classmethod
     def load_from_file(cls):
-        """ This is the load_from_file function """
         l_instance = []
         filename = "./" + cls.__name__ + ".json"
         path = Path(filename)
@@ -76,7 +71,6 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """ This is the save_to_file_csv function """
         if list_objs is not None and len(list_objs) != 0:
             file_name = list_objs[0].__class__.__name__ + ".csv"
         else:
@@ -90,7 +84,6 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """ This is the load from file function """
         l_instance = []
         filename = "./" + cls.__name__ + ".csv"
         path = Path(filename)
@@ -114,7 +107,6 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """ This is the draw function """
         wnd = turtle.Screen()
         for rec in list_rectangles:
             abd = turtle.Turtle()
