@@ -7,14 +7,12 @@ import turtle
 
 
 class Base:
-    """ This is the base class
-        It is the base of all the other classes : Rectangle and Square
-
-    """
+    """ This is the base class """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """ This is the constructor """
         if id is not None:
             self.id = id
         else:
