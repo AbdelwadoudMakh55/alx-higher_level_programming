@@ -112,4 +112,16 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ This is the to_dictionary function """
-        return vars(self)
+        new_vars = {}
+        for key in list(vars(self).keys()):
+            if key == '_Rectangle__width':
+                new_vars['width'] = vars(self)[key]
+            if key == '_Rectangle__height':
+                new_vars['height'] = vars(self)[key]
+            if key == '_Rectangle__x':
+                new_vars['x'] = vars(self)[key]
+            if key == '_Rectangle__y':
+                new_vars['y'] = vars(self)[key]
+            if key == 'id':
+                new_vars[key] = vars(self)[key]
+        return new_vars
