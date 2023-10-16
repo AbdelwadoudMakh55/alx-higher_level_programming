@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """ This is the base module """
 import json
-from pathlib import Path
 import csv
-import turtle
 
 
 class Base:
