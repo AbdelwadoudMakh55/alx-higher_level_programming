@@ -40,7 +40,7 @@ class Square(Rectangle):
         """ This is the to_dictionary function """
         new_vars = {}
         for key in list(vars(self).keys()):
-            if key == 'height' or key == 'width':
+            if key == '_Rectangle__height' or key == '_Rectangle__width':
                 new_vars['size'] = vars(self)[key]
             else:
                 new_vars[key] = vars(self)[key]
