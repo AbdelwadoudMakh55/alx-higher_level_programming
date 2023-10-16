@@ -2,6 +2,7 @@
 """ This is the base module """
 import json
 import csv
+from pathlib import Path
 
 
 class Base:
@@ -109,7 +110,7 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """ this """
+        import turtle
         wnd = turtle.Screen()
         for rec in list_rectangles:
             abd = turtle.Turtle()
