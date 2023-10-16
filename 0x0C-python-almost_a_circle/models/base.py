@@ -2,7 +2,6 @@
 """ This is the base module """
 import json
 import csv
-from pathlib import Path
 
 
 class Base:
@@ -56,7 +55,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ this """
+        from pathlib import Path
         l_instance = []
         filename = "./" + cls.__name__ + ".json"
         path = Path(filename)
