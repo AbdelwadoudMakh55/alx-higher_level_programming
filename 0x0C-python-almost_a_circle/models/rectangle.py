@@ -80,9 +80,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """ This is the area function """
         return self.__width * self.__height
 
     def display(self):
+        """ This is the display function """
         for i in range(self.__y):
             print()
         for i in range(self.__height):
@@ -93,11 +95,13 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """ This is the new __str__ function """
         rect_str = f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}"
         return f"{rect_str}"
 
     def update(self, *args, **kwargs):
+        """ This is the update function """
         attr = ["id", "width", "height", "x", "y"]
         if args is not None and len(args) > 0:
             for i in range(len(args)):
@@ -107,4 +111,5 @@ class Rectangle(Base):
                 setattr(self, key, kwargs[key])
 
     def to_dictionary(self):
+        """ This is the to_dictionary function """
         return vars(self)

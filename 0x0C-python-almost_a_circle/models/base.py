@@ -59,6 +59,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """ This is the load_from_file function """
         l_instance = []
         filename = "./" + cls.__name__ + ".json"
         path = Path(filename)

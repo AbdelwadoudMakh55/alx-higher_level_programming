@@ -83,3 +83,10 @@ class TestRectangleClass(unittest.TestCase):
         r5.update(x=1, height=2, y=3, width=4)
         self.assertAlmostEqual(r5.height, 2)
         self.assertAlmostEqual(r5.y, 3)
+
+    def test_to_dict(self):
+        """ This is the test_to_dict function """
+        r6 = Rectangle(10, 2, 1, 9)
+        r6_dictionary = r6.to_dictionary()
+        self.assertEqual(r6_dictionary, {'_Rectangle__height': 2, '_Rectangle__width': 10, '_Rectangle__x': 1, '_Rectangle__y': 9, 'id': 4})
+        self.assertIsInstance(r6_dictionary, dict)
