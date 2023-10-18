@@ -36,7 +36,7 @@ class Base:
                 return
             else:
                 for objs in list_objs:
-                    l_dict.append(vars(objs))
+                    l_dict.append(objs.to_dictionary())
                 f.write(cls.to_json_string(l_dict))
 
     @staticmethod
