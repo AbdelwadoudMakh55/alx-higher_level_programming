@@ -31,9 +31,13 @@ class Base:
         l_dict = []
         file_name = cls.__name__ + ".json"
         with open(file_name, "w", encoding='utf-8') as f:
-            for objs in list_objs:
-                l_dict.append(vars(objs))
-            f.write(cls.to_json_string(l_dict))
+            if list_objs is None or len(list_objs) == 0:
+                f.write(cls.to_json_string(l_dict))
+                return
+            else:
+                for objs in list_objs:
+                    l_dict.append(vars(objs))
+                f.write(cls.to_json_string(l_dict))
 
     @staticmethod
     def from_json_string(json_string):
