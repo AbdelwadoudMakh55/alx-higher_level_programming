@@ -73,14 +73,13 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """ this """
-        if list_objs is not None and len(list_objs) != 0:
-            file_name = list_objs[0].__class__.__name__ + ".csv"
-        else:
-            file_name = "Base.csv"
         l_dict = []
+        file_name = cls.__name__ + ".csv"
         with open(file_name, "w", encoding='utf-8') as f:
             write = csv.writer(f)
             write.writerow(list(vars(list_objs[0]).keys()))
+            if list_objs is None or len(list_objs) == 0:
+                return
             for obj in list_objs:
                 write.writerow(list(vars(obj).values()))
 
