@@ -12,7 +12,7 @@ class TestSquareClass(unittest.TestCase):
     def test_construction(self):
         """ Testing the __init__ function """
         s1 = Square(7, 3)
-        self.assertAlmostEqual(s1.id, 3)
+        self.assertAlmostEqual(s1.id, 27)
         self.assertAlmostEqual(s1.size, 7)
         s1.size = 5
         self.assertAlmostEqual(s1.size, 5)

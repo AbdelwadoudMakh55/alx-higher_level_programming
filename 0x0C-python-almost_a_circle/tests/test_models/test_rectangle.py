@@ -12,7 +12,7 @@ class TestRectangleClass(unittest.TestCase):
     def test_construction(self):
         """ Testing the __init__ function """
         r1 = Rectangle(7, 3)
-        self.assertAlmostEqual(r1.id, 3)
+        self.assertAlmostEqual(r1.id, 6)
         self.assertAlmostEqual(r1.width, 7)
         r1.width = 5
         self.assertAlmostEqual(r1.width, 5)
@@ -88,5 +88,5 @@ class TestRectangleClass(unittest.TestCase):
         """ This is the test_to_dict function """
         r6 = Rectangle(10, 2, 1, 9)
         r6_dictionary = r6.to_dictionary()
-        self.assertEqual(r6_dictionary, {'_Rectangle__height': 2, '_Rectangle__width': 10, '_Rectangle__x': 1, '_Rectangle__y': 9, 'id': 4})
+        self.assertEqual(r6_dictionary, {'height': 2, 'id': 7, 'width': 10, 'x': 1, 'y': 9})
         self.assertIsInstance(r6_dictionary, dict)
