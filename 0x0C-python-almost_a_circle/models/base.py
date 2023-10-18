@@ -87,7 +87,7 @@ class Base:
     def load_from_file_csv(cls):
         """ this """
         l_instance = []
-        filename = "./" + cls.__name__ + ".csv"
+        filename = cls.__name__ + ".csv"
         path = Path(filename)
         if not path.is_file():
             return l_instance
