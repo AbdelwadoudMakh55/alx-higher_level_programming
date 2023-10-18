@@ -76,16 +76,17 @@ class Base:
         l_dict = []
         file_name = cls.__name__ + ".csv"
         with open(file_name, "w", encoding='utf-8') as f:
-            write = csv.writer(f)
-            write.writerow(list(vars(list_objs[0]).keys()))
             if list_objs is None or len(list_objs) == 0:
                 return
+            write = csv.writer(f)
+            write.writerow(list(vars(list_objs[0]).keys()))
             for obj in list_objs:
-                write.writerow(list(vars(obj).values()))
+                write.writerow(list(obj.to_dictionary().values()))
 
     @classmethod
     def load_from_file_csv(cls):
         """ this """
+        from pathlib import Path
         l_instance = []
         filename = cls.__name__ + ".csv"
         path = Path(filename)
@@ -101,7 +102,7 @@ class Base:
                 for row in rows:
                     dict_rep = {}
                     obj = None
-                    for i in range(len(header)):
+                    for i in range(len(rows[0])):
                         dict_rep[header[i]] = row[i]
                     obj = cls.create(**dict_rep)
                     l_instance.append(obj)
