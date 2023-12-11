@@ -9,7 +9,7 @@ if (process.argv[2]) {
       array[j] = Number(process.argv[i]);
       j++;
     }
-    array.splice(array.indexOf(Math.max(...array)));
+    array.splice(array.indexOf(Math.max(...array)), 1);
     console.log(Math.max(...array));
   }
 } else {
