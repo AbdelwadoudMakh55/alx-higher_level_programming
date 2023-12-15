@@ -13,8 +13,8 @@ if __name__ == '__main__':
         cur = conn.cursor()
         cur.execute("SELECT cities.name FROM states \
                     INNER JOIN cities ON states.id = cities.state_id \
-                    WHERE states.name='{}' \
-                    ORDER BY cities.id ASC".format(sys.argv[4]))
+                    WHERE states.name = %s \
+                    ORDER BY cities.id ASC", (sys.argv[4],))
         query_rows = cur.fetchall()
         for row in query_rows:
             if query_rows.index(row) != len(query_rows) - 1:
