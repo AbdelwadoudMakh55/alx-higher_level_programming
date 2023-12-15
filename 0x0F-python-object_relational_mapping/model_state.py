@@ -2,7 +2,6 @@
 """ This is model_state module """
 
 
-import sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
