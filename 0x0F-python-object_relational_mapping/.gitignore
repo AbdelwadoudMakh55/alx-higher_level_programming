@@ -1,5 +1,4 @@
 #Ignoring .sql files
 
 *.sql
-6-model_state.py
 __pycache__
