@@ -7,10 +7,10 @@ import MySQLdb
 import sys
 
 if __name__ == '__main__':
-    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
-                           passwd=sys.argv[2], db=sys.argv[3])
-    cur = conn.cursor()
     if ';' not in sys.argv[4]:
+        conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                               passwd=sys.argv[2], db=sys.argv[3])
+        cur = conn.cursor()
         cur.execute("SELECT cities.name FROM states \
                     INNER JOIN cities ON states.id = cities.state_id \
                     WHERE states.name='{}' \
@@ -21,5 +21,5 @@ if __name__ == '__main__':
                 print(f"{row[0]}, ", end='')
             else:
                 print(f"{row[0]}")
-    cur.close()
-    conn.close()
+        cur.close()
+        conn.close()
