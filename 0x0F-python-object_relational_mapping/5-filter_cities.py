@@ -15,7 +15,7 @@ if __name__ == '__main__':
                     INNER JOIN cities ON states.id = cities.state_id \
                     WHERE states.name='{0}' \
                     COLLATE utf8mb4_0900_as_cs \
-                    ORDER BY cities.id".format(sys.argv[4]))
+                    ORDER BY cities.id ASC".format(sys.argv[4]))
         query_rows = cur.fetchall()
         for row in query_rows:
             if query_rows.index(row) != len(query_rows) - 1:
