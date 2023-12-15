@@ -20,5 +20,7 @@ if __name__ == '__main__':
         if query_rows:
             city = ", ".join(row[0] for row in query_rows)
             print(city)
+        else:
+            print()
         cur.close()
         conn.close()
