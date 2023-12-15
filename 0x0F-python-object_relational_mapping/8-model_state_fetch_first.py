@@ -17,7 +17,7 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
     try:
-        f_state = session.query(State).first()
+        f_state = session.query(State).order_by(State.id).first()
         print(f"{f_state.id}: {f_state.name}")
     except NoResultFound:
         print("Nothing")
