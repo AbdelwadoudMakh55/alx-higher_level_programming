@@ -17,10 +17,8 @@ if __name__ == '__main__':
                     COLLATE utf8mb4_0900_as_cs \
                     ORDER BY cities.id ASC", (sys.argv[4],))
         query_rows = cur.fetchall()
-        for row in query_rows:
-            if query_rows.index(row) != len(query_rows) - 1:
-                print(f"{row[0]}, ", end='')
-            else:
-                print(f"{row[0]}")
+        if query_rows:
+            city = ", ".join(row[0] for row in query_rows)
+            print(city)
         cur.close()
         conn.close()
