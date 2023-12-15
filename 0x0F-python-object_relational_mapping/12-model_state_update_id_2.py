@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This is the 11-model_state_insert module """
+""" This is the 12-model_state_update_id_2.py module """
 
 import sys
 from model_state import Base, State
@@ -16,8 +16,6 @@ if __name__ == "__main__":
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    louisiana = State(name='Louisiana')
-    session.add(louisiana)
-    new_loui = session.query(State).filter_by(name='Louisiana').first()
-    print(new_loui.id)
+    id_2 = session.query(State).filter(State.id == 2).first()
+    id_2.name = 'New Mexico'
     session.commit()
