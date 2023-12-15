@@ -13,7 +13,7 @@ if __name__ == '__main__':
     if ';' not in sys.argv[4]:
         cur.execute("SELECT cities.name FROM states \
                     INNER JOIN cities ON states.id = cities.state_id \
-                    WHERE states.name='{0}' \
+                    WHERE states.name='{}' \
                     ORDER BY cities.id ASC".format(sys.argv[4]))
         query_rows = cur.fetchall()
         for row in query_rows:
