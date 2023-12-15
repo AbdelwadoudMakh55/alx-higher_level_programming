@@ -10,6 +10,10 @@ Base = declarative_base()
 
 class State(Base):
     __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, unique=True, nullable=False,
+    id = Column("id", Integer, primary_key=True, unique=True, nullable=False,
                 autoincrement=True)
-    name = Column(String(128), nullable=False)
+    name = Column("name", String(128), nullable=False)
+
+    def __init__(self, id, name):
+        self.id = id
+        self.name = name
