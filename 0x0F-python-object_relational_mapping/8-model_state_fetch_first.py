@@ -16,8 +16,8 @@ if __name__ == "__main__":
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    try:
-        f_state = session.query(State).order_by(State.id).first()
+    f_state = session.query(State).order_by(State.id).first()
+    if f_state:
         print(f"{f_state.id}: {f_state.name}")
-    except NoResultFound:
+    else:
         print("Nothing")
