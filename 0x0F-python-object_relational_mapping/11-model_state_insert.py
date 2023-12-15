@@ -20,3 +20,4 @@ if __name__ == "__main__":
     session.add(louisiana)
     new_loui = session.query(State).filter_by(name='Louisiana').first()
     print(new_loui.id)
+    session.commit()
