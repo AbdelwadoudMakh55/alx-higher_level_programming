@@ -11,6 +11,7 @@ if __name__ == '__main__':
                            passwd=sys.argv[2], db=sys.argv[3])
     cur = conn.cursor()
     cur.execute("SELECT * FROM states WHERE name='{0}' \
+                COLLATE utf8mb4_0900_as_cs \
                 ORDER BY id".format(sys.argv[4]))
     query_rows = cur.fetchall()
     for row in query_rows:
