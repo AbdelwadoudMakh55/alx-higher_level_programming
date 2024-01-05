@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This is the find a peak technical interview preparation """
 
+
 def find_peak(list_of_integers):
     """ This is the function for finding the peak """
 
