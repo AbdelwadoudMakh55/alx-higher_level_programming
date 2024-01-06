@@ -3,6 +3,7 @@
 
 
 import requests
+import sys
 if __name__ == "__main__":
-    r = requests.get("https://alx-intranet.hbtn.io/status")
+    r = requests.get(sys.argv[1])
     print(r.headers["X-Request-Id"])
