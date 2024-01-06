@@ -6,4 +6,5 @@ from urllib import request
 import sys
 if __name__ == "__main__":
     with request.urlopen(sys.argv[1]) as resp:
-        print(resp.headers.__dict__["_headers"][-3][1])
+        if "_headers" in resp.headers.__dict__:
+            print(resp.headers.__dict__["_headers"][-3][1])
