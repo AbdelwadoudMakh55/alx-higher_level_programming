@@ -2,11 +2,11 @@
 """ This is the 3-error_code module """
 
 
-from urllib import request
+import urllib
 import sys
 if __name__ == "__main__":
     try:
-        with request.urlopen(sys.argv[1]) as req:
+        with urllib.request.urlopen(sys.argv[1]) as req:
             pass
     except urllib.error.HTTPError as e:
         print(e.reason)
