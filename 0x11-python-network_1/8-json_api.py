@@ -5,13 +5,13 @@
 import requests
 import sys
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
+    if len(sys.argv) == 2:
         q = sys.argv[1]
     else:
         q = ""
     r = requests.post("http://0.0.0.0:5000/search_user", data={'q': q})
     if r.status_code == 200:
-        if len(r.json()) > 0:
+        if r.json():
             print(f'[{r.json()["id"]}] {r.json()["name"]}')
         else:
             print("No result")
