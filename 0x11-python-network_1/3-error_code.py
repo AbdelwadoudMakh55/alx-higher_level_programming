@@ -10,4 +10,4 @@ if __name__ == "__main__":
         with request.urlopen(sys.argv[1]) as req:
             print(req.read().decode())
     except urllib.error.URLError as e:
-        print(f'Error code: {e.response.status_code}')
+        print(f'Error code: {e.code}')
