@@ -4,5 +4,7 @@
 
 from urllib import request
 import sys
+
+
 with request.urlopen(sys.argv[1]) as resp:
     print(resp.headers.__dict__["_headers"][-3][1])
