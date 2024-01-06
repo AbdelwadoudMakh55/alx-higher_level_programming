@@ -6,5 +6,6 @@ import requests
 import sys
 if __name__ == "__main__":
     r = requests.get(sys.argv[1])
-    r_id = r.headers.get["X-Request-Id"]
-    print(r_id)
+    r_id = r.headers["X-Request-Id"]
+    if r_id is not None:
+        print(r_id)
