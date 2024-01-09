@@ -11,9 +11,10 @@ if __name__ == "__main__":
         q = ""
     r = requests.post("http://0.0.0.0:5000/search_user", data={'q': q})
     if r.status_code == 200:
-        if r.json() and len(r.json()) > 0:
-            print(f'[{r.json()["id"]}] {r.json()["name"]}')
+        if r.json:
+            if r.json() and len(r.json()) > 0:
+                print(f'[{r.json()["id"]}] {r.json()["name"]}')
+            else:
+                print("No result")
         else:
-            print("No result")
-    else:
-        print("Not a valid JSON")
+            print("Not a valid JSON")
