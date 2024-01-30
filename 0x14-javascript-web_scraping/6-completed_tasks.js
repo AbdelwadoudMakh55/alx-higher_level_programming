@@ -15,5 +15,10 @@ request(process.argv[2], function (err, response, body) {
       todosByuser[todos[j].userId]++;
     }
   }
+  for (let j = 1; j < 11; j++) {
+    if (todosByuser[j] === 0) {
+      delete todosByuser[j];
+    }
+  }
   console.log(todosByuser);
 });
