@@ -23,12 +23,12 @@ request(url, function (error, response, body) {
     i++;
   }
   Promise.all(promises)
-    .then(results => {
+    .then((results) => {
       results.forEach(result => {
         console.log(result);
       });
     })
-    .catch(error => {
+    .catch((error) => {
       console.error(error);
     });
 });
