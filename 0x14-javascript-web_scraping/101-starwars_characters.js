@@ -7,12 +7,28 @@ request(url, function (error, response, body) {
     return;
   }
   const charList = JSON.parse(body).characters;
-  for (let i = 0; i < charList.length; i++) {
-    request(charList[i], function (error, response, body) {
-      if (error) {
-        console.error(error);
-      }
-      console.log(JSON.parse(body).name);
+  const promises = [];
+  let i = 0;
+  while (i < charList.length) {
+    const p = new Promise((resolve, reject) => {
+      request(charList[i], function (error, response, body) {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(JSON.parse(body).name);
+        }
+      });
     });
+    promises.push(p);
+    i++;
   }
+  Promise.all(promises)
+    .then(results => {
+      results.forEach(result => {
+        console.log(result);
+      });
+    })
+    .catch(error => {
+      console.error(error);
+    });
 });
