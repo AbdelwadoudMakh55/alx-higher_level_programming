@@ -3,6 +3,7 @@ const request = require('request');
 request(process.argv[2], function (error, response, body) {
   if (error) {
     console.error(error);
+    return;
   }
   const epList = JSON.parse(body).results;
   let charID18 = 0;
