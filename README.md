@@ -1,1 +1,2 @@
 ## First steps toward learning high level programming languages and their use cases
+In this collection of code, I learned from the very basics to the more advanced parts of the Python language, including object-oriented programming (OOP) for handling more complex tasks. Alongside Python, I also dabbled in SQL, which helped me understand how to interact with databases. Additionally, I got a taste of JavaScript, getting a basic understanding of its syntax and capabilities. Overall, it's been a journey that's broadened my skills across various programming areas.
